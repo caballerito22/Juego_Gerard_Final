@@ -108,9 +108,15 @@ public class Main {
                 }
             }
 
-            // Mostrar el marcador
+            //Mostrar como van después de cada partida.
             writer1.println("Marcador: " + player1Name + " " + winsP1 + " - " + winsP2 + " " + player2Name);
             writer2.println("Marcador: " + player2Name + " " + winsP2 + " - " + winsP1 + " " + player1Name);
+
+            //Les digo cuántas partidas les quedan para ganar el juego (es al mejor de 3)
+            writer1.println("Te quedan " + (2 - winsP1) + " partidas para ganar el juego.");
+            writer2.println("Te quedan " + (2 - winsP2) + " partidas para ganar el juego.");
+
+
         }
 
         // Final del juego
@@ -127,17 +133,17 @@ public class Main {
         serverSocket.close();
     }
 
-    // Mostrar tablero
+    //Función para el tablero
     private static void showBoard(PrintWriter writer1, PrintWriter writer2, int[][] tablero) {
         StringBuilder board = new StringBuilder();
 
-        // Mostrar las fichas de cada montón, con espacio entre los palos
+        //Enseñar los palods de cada fila, con espacio para verlos bien.
         for (int i = 0; i < tablero.length; i++) {
-            board.append("Fila " + (i + 1) + ": "); // Muestra Fila 1, Fila 2, Fila 3
+            board.append("Fila " + (i + 1) + ": "); //Para enseñar la fila 1, 1+1, 2+1
 
             // Dibujar los palos
             for (int j = 0; j < tablero[i].length; j++) {
-                board.append("|   ");  // Añadido espacio entre los palos
+                board.append("|   ");  //Para añadir espacio entre los palos
             }
 
             // Salto de línea para la siguiente fila
@@ -149,3 +155,22 @@ public class Main {
         writer2.println(board);
     }
 }
+
+/*
+- Falta que cuando ponga una fila que no sea de 1 a 3 no pete.
+- Falta que cuando elijo quitar <=0 palos no me pete, y pedir que lo vuelva a preguntar.
+ */
+
+/*
+Ya está arreglado (en el cliente).
+ */
+
+/*
+Comentado y revisado de la 115 a la 153
+ */
+
+/*
+No he puesto lo de que elijan los jugadores las rondas, porque como son 2, no lo va a elegir solo 1.
+    He puesto que sea a 3 rondas, puedo poner que sea a las rondas que quiera.
+    O también puedo preguntarle a los dos, y si la respuesta coincide hacer esas rondas, si no, hacer las que están puestas por defecto. Pero eso me parece muy díficil.
+ */

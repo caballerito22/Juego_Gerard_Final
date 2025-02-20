@@ -171,6 +171,7 @@ Ya está arreglado (en el cliente).
 
 /*
 Falta mejorar que cuadno pones los palos a quitar de x fila, si es <=0 te lo vuelve a preguntar sin mostrarte el tablero, en cambio, si te pasas te vuelve a preguntar por la fila y te muestra el tablaro.
+Cuando te pregunta por la fila, si no es 1, 2 o 3 te vuelve a preguntar si o si de la misma maner le pongas <=0 o =>4, eso está bien.
  */
 
 /*

@@ -65,7 +65,7 @@ public class Main {
                         tablero[pile] = Arrays.copyOf(tablero[pile], tablero[pile].length - tokens);
                         currentPlayer = 2;
                     } else {
-                        writer1.println("No puedes quitar más fichas de las que hay en el montón.");
+                        writer1.println("No puedes quitar más fichas de las que hay en el montón, vuelve a intentarlo y elige bien.");
                     }
                 } else {
                     writer2.println(player2Name + ", es tu turno.");
@@ -77,7 +77,7 @@ public class Main {
                         tablero[pile] = Arrays.copyOf(tablero[pile], tablero[pile].length - tokens);
                         currentPlayer = 1;
                     } else {
-                        writer2.println("No puedes quitar más fichas de las que hay en el montón.");
+                        writer2.println("No puedes quitar más fichas de las que hay en el montón, vuelve a intentarlo y elige bien.");
                     }
                 }
 
@@ -97,10 +97,10 @@ public class Main {
                     if (currentPlayer == 1) {
                         winsP2++;
                         writer1.println("Lo siento "+player1Name+ " has perdido :/");
-                        writer2.println("Muy bien "+player2Name+ "has ganado!!");
+                        writer2.println("Muy bien "+player2Name+ " has ganado!!");
                     } else {
                         winsP1++;
-                        writer1.println("Muy bien "+player1Name+ "has ganado!!");
+                        writer1.println("Muy bien "+player1Name+ " has ganado!!");
                         writer2.println("Lo siento "+player2Name+ " has perdido :/");
                     }
                     break;
@@ -110,6 +110,11 @@ public class Main {
             // Mostrar el marcador
             writer1.println("Marcador: " + player1Name + " " + winsP1 + " - " + winsP2 + " " + player2Name);
             writer2.println("Marcador: " + player2Name + " " + winsP2 + " - " + winsP1 + " " + player1Name);
+
+            //Como es el mejor de tres, aqui pongo cuantas quedan para ganar (hay que llegar  dos)
+            writer1.println("Te faltan " + (2 - winsP1) + " partidas para ganar.");
+            writer2.println("Te faltan " + (2 - winsP2) + " partidas para ganar.");
+
         }
 
         // Final del juego
@@ -144,7 +149,7 @@ public class Main {
         }
 
         // Enviar el tablero a ambos jugadores
-        writer1.println(board.toString());
-        writer2.println(board.toString());
+        writer1.println(board);
+        writer2.println(board);
     }
 }

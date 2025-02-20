@@ -137,7 +137,7 @@ public class Main {
 
         // Mostrar las fichas de cada montón, con espacio entre los palos
         for (int i = 0; i < tablero.length; i++) {
-            board.append("Fila " + (i + 1) + ": "); // Muestra Fila 1, Fila 2, Fila 3
+            board.append("Fila " + (i + 1) + ": "); // Muestra las 3 filas que hay
 
             // Dibujar los palos
             for (int j = 0; j < tablero[i].length; j++) {

@@ -117,8 +117,8 @@ public class Main {
             writer2.println("Marcador: " + player2Name + " " + winsP2 + " - " + winsP1 + " " + player1Name);
 
             //Les digo cuántas partidas les quedan para ganar el juego (es al mejor de 3)
-            writer1.println("Te quedan " + (2 - winsP1) + " partidas para ganar el juego.");
-            writer2.println("Te quedan " + (2 - winsP2) + " partidas para ganar el juego.");
+            writer1.println("Te quedan " + (2 - winsP1) + " partida/as para ganar el juego.");
+            writer2.println("Te quedan " + (2 - winsP2) + " partida/as para ganar el juego.");
 
 
         }

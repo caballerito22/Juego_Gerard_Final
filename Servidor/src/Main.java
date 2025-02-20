@@ -29,20 +29,11 @@ public class Main {
         String player2Name = reader2.readLine();
 
         writer1.println("Hola, " + player1Name + ". VAMOS A EMPEZAR !!!");
-        writer1.println();
         writer2.println("Hola, " + player2Name + ". El juego comienza ahora.");
-        writer2.println();
         writer1.println(player1Name + " te ha tocado jugar contra " + player2Name + " ¿crees que puedes ganarle? Demuéstralo");
-        writer1.println();
         writer2.println(player2Name + ", vas a jugar contra " + player1Name + " es hora de demostrar lo que sabes.");
-        writer2.println();
         writer1.println("El juego es al mejor de 3 partidas, es decir, el que gane dos partidas, será el ganador.");
-        writer1.println();
         writer2.println("El juego es al mejor de 3 partidas, es decir, el que gane dos partidas, será el ganador.");
-        writer2.println();
-        writer1.println("Gana el jugador que quite el último palo del tablero, en cada turno puedes quitar los palos que quieras pero solo de una fila.");
-        writer2.println("Gana el jugador que quite el último palo del tablero, en cada turno puedes quitar los palos que quieras pero solo de una fila.");
-
 
         // Variables para el conteo de victorias
         int winsP1 = 0, winsP2 = 0;
@@ -106,24 +97,19 @@ public class Main {
                     if (currentPlayer == 1) {
                         winsP2++;
                         writer1.println("Lo siento "+player1Name+ " has perdido :/");
-                        writer2.println("Muy bien "+player2Name+ " has ganado!!");
+                        writer2.println("Muy bien "+player2Name+ "has ganado!!");
                     } else {
                         winsP1++;
-                        writer1.println("Muy bien "+player1Name+ " has ganado!!");
+                        writer1.println("Muy bien "+player1Name+ "has ganado!!");
                         writer2.println("Lo siento "+player2Name+ " has perdido :/");
                     }
                     break;
                 }
             }
 
-            //Muesto el marcador después de cada partida
+            // Mostrar el marcador
             writer1.println("Marcador: " + player1Name + " " + winsP1 + " - " + winsP2 + " " + player2Name);
             writer2.println("Marcador: " + player2Name + " " + winsP2 + " - " + winsP1 + " " + player1Name);
-
-            //Esto es para decir las partidas que que te quedan para ganar el juego
-            writer1.println("Te quedan " + (2 - winsP1) + " partida/as para ganar el juego.");
-            writer2.println("Te quedan " + (2 - winsP2) + " partida/as para ganar el juego.");
-
         }
 
         // Final del juego
@@ -131,8 +117,8 @@ public class Main {
             writer1.println("Enhorabuena " + player1Name + " como ya has ganado dos partidas, HAS GANADO EL JUEGO !!!");
             writer2.println("Lo siento " +player2Name +" otra vez será, "+player1Name+ " te ha ganado");
         } else {
-            writer1.println("¡" + player1Name + " has perdido! " + player2Name + " ha ganado el juego.");
-            writer2.println("¡Felicidades, " + player2Name + "!Has ganado el juego.");
+            writer1.println("¡" + player1Name + " ha perdido! " + player2Name + " ha ganado el juego.");
+            writer2.println("¡Felicidades, " + player2Name + "! Has ganado el juego.");
         }
 
         socket1.close();
@@ -140,17 +126,17 @@ public class Main {
         serverSocket.close();
     }
 
-    //Función apra que aparezca el tablaro
+    // Mostrar tablero
     private static void showBoard(PrintWriter writer1, PrintWriter writer2, int[][] tablero) {
         StringBuilder board = new StringBuilder();
 
-        //Para los palos de cada montón, con espacio entre los palos
+        // Mostrar las fichas de cada montón, con espacio entre los palos
         for (int i = 0; i < tablero.length; i++) {
-            board.append("Fila " + (i + 1) + ": "); //Filas 1, 1+1, y 2+1
+            board.append("Fila " + (i + 1) + ": "); // Muestra Fila 1, Fila 2, Fila 3
 
-            //Para que aparezcan los palos
+            // Dibujar los palos
             for (int j = 0; j < tablero[i].length; j++) {
-                board.append("|   ");  //Para que los palos no me salgan juntos y se vean bien
+                board.append("|   ");  // Añadido espacio entre los palos
             }
 
             // Salto de línea para la siguiente fila
@@ -158,28 +144,7 @@ public class Main {
         }
 
         // Enviar el tablero a ambos jugadores
-        writer1.println(board);
-        writer2.println(board);
+        writer1.println(board.toString());
+        writer2.println(board.toString());
     }
 }
-
-
-/*
-Problemas encontrados:
-
--Tengo que hacer que solo se pueda elegir de la fila 1 a la 3.
--Tengo que hacer que no se puedan quitar menos palos de los que hay.
-*/
-
-//Comentado y revisado desde la línea 105 a la 164
-
-/*
-Ya están arreglados (en el cliente)
-    Aparte, nos enseña el marcador después de cada partida y nos dice las partidas que nos quedan para ganar el juego (hasta llegar a 2).
-    No he hecho que elijan las rondas (lo he hecho al mejor de 3), ya que como son dos jugadoes no lo va a elegir solo uno.
-        Puedo establecer yo las rondas si quieres, o si no preguntarles a los dos, y si la respuesta coincide hacer esas rondas, si no a 3. Pero eso lo veo muy díficil.
-*/
-
-/*
-Faltan mejorar muchas cosas, como que
- */

@@ -69,6 +69,7 @@ public class Main {
                     }
                 } else {
                     writer2.println(player2Name + ", es tu turno.");
+                    writer1.println("Un momento, es turno de " + player2Name + ".");
                     int pile = Integer.parseInt(reader2.readLine()) - 1;  // Convertir de 1-3 a 0-2
                     int tokens = Integer.parseInt(reader2.readLine());
 
@@ -144,7 +145,7 @@ public class Main {
         }
 
         // Enviar el tablero a ambos jugadores
-        writer1.println(board.toString());
-        writer2.println(board.toString());
+        writer1.println(board);
+        writer2.println(board);
     }
 }

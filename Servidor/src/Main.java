@@ -179,3 +179,7 @@ Ya están arreglados (en el cliente)
     No he hecho que elijan las rondas (lo he hecho al mejor de 3), ya que como son dos jugadoes no lo va a elegir solo uno.
         Puedo establecer yo las rondas si quieres, o si no preguntarles a los dos, y si la respuesta coincide hacer esas rondas, si no a 3. Pero eso lo veo muy díficil.
 */
+
+/*
+Faltan mejorar muchas cosas, como que
+ */

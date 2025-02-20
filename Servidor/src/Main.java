@@ -23,7 +23,9 @@ public class Main {
 
         // Mensaje de bienvenida y nombre de los jugadores
         writer1.println("Bienvenido al Juego del Nim!, estamos buscando otro jugador para empezar...");
+        writer1.println();
         writer2.println("Bienvenido al Juego del Nim! ");
+        writer2.println();
 
         String player1Name = reader1.readLine();
         String player2Name = reader2.readLine();
@@ -31,7 +33,9 @@ public class Main {
         writer1.println("Hola, " + player1Name + ". VAMOS A EMPEZAR !!!");
         writer2.println("Hola, " + player2Name + ". El juego comienza ahora.");
         writer1.println(player1Name + " te ha tocado jugar contra " + player2Name + " ¿crees que puedes ganarle? Demuéstralo");
+        writer1.println();
         writer2.println(player2Name + ", vas a jugar contra " + player1Name + " es hora de demostrar lo que sabes.");
+        writer2.println();
         writer1.println("El juego es al mejor de 3 partidas, es decir, el que gane dos partidas, será el ganador.");
         writer2.println("El juego es al mejor de 3 partidas, es decir, el que gane dos partidas, será el ganador.");
 
@@ -163,6 +167,10 @@ public class Main {
 
 /*
 Ya está arreglado (en el cliente).
+ */
+
+/*
+Falta mejorar que cuadno pones los palos a quitar de x fila, si es <=0 te lo vuelve a preguntar sin mostrarte el tablero, en cambio, si te pasas te vuelve a preguntar por la fila y te muestra el tablaro.
  */
 
 /*

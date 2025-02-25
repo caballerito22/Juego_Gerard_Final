@@ -60,7 +60,7 @@ public class Main {
                 //cuando le toca al jugador 1, se lo dice y al dos que espere
                 if (turnoJugador == 1) {
                     writer1.println(player1Name + ", es tu turno.");
-                    writer2.println("Un momento, es turno de " + player1Name );
+                    writer2.println("Un momento, es turno de " + player1Name);
                     //convierte el texto en numero (lo parsea) y le resta uno porque en los arrays se empieza por 0
                     int fila = Integer.parseInt(reader1.readLine()) - 1;
                     //lo mismo pero sin -1 porque no hay array
@@ -79,7 +79,7 @@ public class Main {
                     //lo mismo exacto, pero para el jugador 2
                 } else {
                     writer2.println(player2Name + ", es tu turno.");
-                    writer1.println("Un momento, es turno de " + player2Name + ".");
+                    writer1.println("Un momento, es turno de " +player2Name);
                     int fila = Integer.parseInt(reader2.readLine()) - 1;
                     int palos = Integer.parseInt(reader2.readLine());
 
@@ -93,7 +93,7 @@ public class Main {
                 }
 
                 //pongo esto para que despues de cada jugada muestre el tablero
-                showBoard(writer1, writer2, tablero);
+                showBoard(writer1, writer2,tablero);
 
                 //creo un boolean para que se haga lo de arriba mientras no se gane
                 //la inicio true y si el juego no se ha acabado la pongo false
@@ -124,12 +124,12 @@ public class Main {
             }
 
             //Mostrar como van después de cada partida.
-            writer1.println("Marcador: " + player1Name + " " + winsP1 + " - " + winsP2 + " " + player2Name);
-            writer2.println("Marcador: " + player2Name + " " + winsP2 + " - " + winsP1 + " " + player1Name);
+            writer1.println("Marcador: " + player1Name + " " + winsP1 + " - " + winsP2 + " " +player2Name);
+            writer2.println("Marcador: " + player2Name + " " + winsP2 + " - " + winsP1 + " " +player1Name);
 
             //Les digo cuántas partidas les quedan para ganar el juego (es al mejor de 3)
             writer1.println("Te quedan " + (2 - winsP1) + " partida/as para ganar el juego.");
-            writer2.println("Te quedan " + (2 - winsP2) + " partida/as para ganar el juego.");
+            writer2.println("Te quedan " + (2 -winsP2) + " partida/as para ganar el juego.");
 
 
         }
